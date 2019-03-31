@@ -1,0 +1,138 @@
+/* App View */
+body {
+  margin: 0;
+  background-color: #000; }
+  body .back,
+  body .front {
+    -webkit-transition-timing-function: ease-out;
+    -webkit-transition-duration: 1.4s;
+    -webkit-transition-property: rotateY, rotateX;
+    -webkit-transform-style: preserve-3d; }
+  body .front {
+    z-index: 3;
+    -webkit-transform: rotateY(0deg);
+    -webkit-backface-visibility: hidden; }
+  body .back {
+    z-index: 2;
+    -webkit-transform: rotateY(-180deg);
+    -webkit-backface-visibility: hidden; }
+
+body.flipped .front {
+  z-index: 3;
+  -webkit-transform: rotateY(180deg); }
+body.flipped .back {
+  z-index: 4;
+  -webkit-transform: rotateY(0deg); }
+
+/* Nav Bar */
+header {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  overflow: hidden;
+  width: 320px;
+  height: 44px;
+  background: #34312F url(../images/bg-nav-bar.png) 0 0 no-repeat;
+  background-size: 100% auto;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6), 0 0 3px rgba(0, 0, 0, 0.4);
+  -webkit-transform: translate3d(0, 0, 0); }
+
+/* Feed/Map View Toggle */
+.flip {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: block;
+  width: 25px;
+  height: 25px;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-perspective: 2500;
+  -webkit-perspective-origin: center; }
+  .flip .front,
+  .flip .back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    width: 25px;
+    height: 25px;
+    background-size: 100% auto; }
+  .flip .front {
+    background: url(../images/icon-map.png) 0 0 no-repeat; }
+  .flip .back {
+    background: url(../images/icon-feed.png) 0 0 no-repeat; }
+
+/* Feed/Map View Containers */
+.view-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-top: 44px;
+  width: 320px;
+  height: 416px;
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-perspective: 2500;
+  -webkit-perspective-origin: center; }
+
+/* Feed View */
+.feed-view {
+  position: relative;
+  float: left;
+  overflow: scroll;
+  padding: 0 0 50px;
+  width: 320px;
+  height: 366px;
+  background-color: #262422;
+  -webkit-overflow-scrolling: touch; }
+
+.search {
+  float: left;
+  width: 320px;
+  height: 49px;
+  background: #262422 url(../images/bg-feed-view.png) 0 0 no-repeat;
+  background-size: 100% auto; }
+
+.instagram {
+  float: left;
+  margin: 0;
+  width: 320px;
+  height: 460px;
+  background: #262422 url(../images/bg-img.png) 0 30px no-repeat;
+  background-size: 100% auto; }
+  .instagram img {
+    margin: 70px 0;
+    width: 320px;
+    height: 320px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3), 0 0 3px rgba(0, 0, 0, 0.3);
+    -webkit-transition: 0.18s -webkit-transform ease-out;
+    -webkit-transform: translate3d(0, 0, 0); }
+    .instagram img.left {
+      -webkit-transform: translate3d(-230px, 0, 0); }
+    .instagram img.right {
+      -webkit-transform: translate3d(90px, 0, 0); }
+
+/* Map View */
+.map-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 416px;
+  background: #262422 url(../images/bg-map-view.png) 0 100% no-repeat;
+  background-size: 100% auto; }
+
+/* Fix jQuery Mobile Hacks */
+html,
+body,
+.ui-page {
+  min-width: 320px !important;
+  min-height: 460px !important;
+  max-width: 320px !important;
+  max-height: 460px !important;
+  width: 320px !important;
+  height: 460px !important; }
+
+.ui-loader {
+  display: none !important; }
+
+/*# sourceMappingURL=all.css.map */
